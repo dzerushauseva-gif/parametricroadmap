@@ -1,0 +1,289 @@
+PARAMETRIC & COMPUTATIONAL GEOMETRY — SELF-STUDY PATHWAY
+For designers with high school calculus, returning after a gap
+=========================================================================
+Estimated total commitment: 12–18 months at 5–7 hours per week
+Practical returns begin from Phase 2 onward (~3 months in)
+
+
+=========================================================================
+PHASE 1 — Reconnect with the Foundations
+Estimated time: 6–8 weeks
+=========================================================================
+
+The goal here is not mechanical drill but rebuilding geometric intuition.
+Don't skip this phase even if it feels like backtracking. The intuition
+you rebuild here is what makes everything in later phases feel motivated
+rather than arbitrary.
+
+RESOURCE 1
+Name:     Essence of Calculus — 3Blue1Brown
+Link:     https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr
+Format:   YouTube series (~3 hours total, free)
+How to use: Watch in order without pausing to take notes. Let the
+            geometric intuition rebuild passively. The goal is to
+            remember *why* derivatives and integrals exist, not how
+            to execute them. Directly primes your understanding of
+            curvature in later phases.
+
+RESOURCE 2
+Name:     Calculus 1 & 2 — Professor Leonard
+Link:     https://www.youtube.com/c/ProfessorLeonard
+Format:   YouTube lectures (free)
+How to use: Work alongside him with a notebook. Do every example before
+            he shows the answer. Focus especially on: chain rule, related
+            rates, maxima/minima, and inflection points. These map directly
+            onto taper curves and curvature logic in parametric modeling.
+
+RESOURCE 3
+Name:     Khan Academy — Algebra & Trigonometry
+Link:     https://www.khanacademy.org/math/algebra
+          https://www.khanacademy.org/math/trigonometry
+Format:   Interactive modules (free)
+How to use: Use reactively, not systematically. When something in
+            Leonard's lectures feels shaky underneath, find the
+            relevant Khan Academy module and close that specific gap.
+            Don't try to review all of precalculus upfront.
+
+PHASE 1 MILESTONE
+You should be able to look at the cosine taper equation:
+  r_min + (r_max - r_min) * 0.5 * (1 - cos(π * s))
+...and understand why it produces a smooth S-curve, and roughly
+sketch its shape without a calculator.
+
+
+=========================================================================
+PHASE 2 — Parametric Thinking and 2D Curves
+Estimated time: 4–6 weeks
+=========================================================================
+
+The key mental shift in this phase: from "y as a function of x"
+to "both x and y as functions of a third variable t." This is
+exactly how the bottle profile and all parametric CAD curves work.
+
+RESOURCE 1
+Name:     Paul's Online Math Notes — Parametric Equations & Curves
+Link:     https://tutorial.math.lamar.edu/Classes/CalcII/ParametricEqn.aspx
+Format:   Free written notes with practice problems
+How to use: Work through the parametric equations section of Calc II
+            carefully. Do the practice problems — don't just read.
+            Unusually well-written for a free resource. The problem
+            sets are well-calibrated for self-study.
+
+RESOURCE 2
+Name:     Desmos Graphing Calculator
+Link:     https://www.desmos.com/calculator
+Format:   Free browser-based graphing tool
+How to use: Use for 10–15 minutes daily. Type parametric equations
+            and manipulate them live. Recreate the bottle profile
+            equation. Try different taper exponents. Build the habit
+            of translating between equations and shapes visually.
+            Feedback is nearly instant — this is where intuition
+            develops fastest.
+
+RESOURCE 3
+Name:     A Primer on Bézier Curves — Pomax
+Link:     https://pomax.github.io/bezierinfo
+Format:   Free interactive online book
+How to use: Read the first half, up to and including the section on
+            curvature. Written explicitly for designers and developers
+            doing computational work. The interactive diagrams let you
+            manipulate control points and watch the math respond in
+            real time. Directly applicable to spine curves in
+            Grasshopper and Fusion.
+
+PHASE 2 MILESTONE
+You should be able to write a Python function from scratch that
+generates a parametric taper curve with variable parameters and
+plot it with matplotlib, understanding every line you've written.
+
+
+=========================================================================
+PHASE 3 — Into Three Dimensions
+Estimated time: 6–8 weeks
+=========================================================================
+
+This is where the script's surface mapping logic (uv_to_3d, surface
+normals, curvature weighting) will fully click mathematically.
+
+RESOURCE 1
+Name:     Multivariable Calculus 18.02 — MIT OpenCourseWare
+Link:     https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/
+Format:   Free lectures, notes, and problem sets
+How to use: Focus on these units specifically:
+              - Vectors and dot products
+              - Parametric surfaces
+              - Surface normals
+              - Double integrals
+            Skip the electromagnetism application sections for now.
+            Work at least the first few problems of each problem set
+            to verify you can execute the concepts, not just follow them.
+
+RESOURCE 2
+Name:     Visual Differential Geometry and Forms — Tristan Needham
+Link:     https://www.amazon.com/Visual-Differential-Geometry-Forms-Mathematical/dp/0691203695
+          (also check your local library)
+Format:   Book (paid, ~$50 new, often cheaper secondhand)
+How to use: Don't read cover to cover. Use as a companion to the MIT
+            course. Read the chapters on curves in space and surface
+            curvature in parallel with the relevant OCW lectures.
+            Needham shows the geometry of every idea before the
+            algebra — the right order for design-background learners.
+            The chapters on Gaussian curvature and the shape operator
+            are most directly relevant to the script's curvature
+            weighting logic.
+
+PHASE 3 MILESTONE
+You should be able to derive the surface normal vector at any point
+on the bottle profile by hand, and explain why the script uses the
+outward radial direction as the construction plane normal for a
+surface of revolution.
+
+
+=========================================================================
+PHASE 4 — Computational Geometry and Voronoi Diagrams
+Estimated time: 4–6 weeks
+=========================================================================
+
+By this point you have enough mathematical maturity to engage with
+the algorithms directly. The emphasis here is on building things
+from scratch before reading the formal theory.
+
+RESOURCE 1
+Name:     The Nature of Code — Daniel Shiffman
+Link:     https://natureofcode.com  (free online)
+          https://www.youtube.com/c/TheCodingTrain  (companion videos)
+Format:   Free online book + YouTube channel
+How to use: Read the chapters on autonomous agents and simulation.
+            Then watch the Coding Train Voronoi diagram videos and
+            implement a brute-force Voronoi from scratch in Python
+            using only matplotlib — assigning grid points to their
+            nearest seed, coloring by assignment, plotting. This
+            single exercise builds more Voronoi intuition than any
+            amount of reading. Written for artists and designers
+            who want to understand underlying math.
+
+RESOURCE 2
+Name:     Lloyd's Relaxation Algorithm
+Link:     https://en.wikipedia.org/wiki/Lloyd%27s_algorithm
+          (start here, then search for Python implementations to compare
+          against your own)
+Format:   Reference + self-implementation exercise
+How to use: After building brute-force Voronoi, implement Lloyd's
+            relaxation on top of it. It is only ~20 additional lines:
+            move each seed to the centroid of its own cell, recompute.
+            The result is the even, organic cell distribution seen in
+            giraffe skin and dragonfly wings. Understanding why it
+            converges connects the algorithm to physical energy
+            minimization — the mathematical root of biomimicry.
+
+RESOURCE 3
+Name:     Computational Geometry: Algorithms and Applications
+          — de Berg, Cheong, van Kreveld, Overmars
+Link:     https://www.springer.com/gp/book/9783540779735
+          (check your local university library for free access)
+Format:   Book (paid, commonly available in libraries)
+How to use: At this stage read only:
+              - The introduction
+              - Chapter on Voronoi diagrams
+              - Chapter on Delaunay triangulations
+            The formal treatment will feel accessible now that you've
+            already built the brute-force version yourself. Don't
+            attempt to read the full book linearly.
+
+PHASE 4 MILESTONE
+You should be able to implement a curvature-weighted Voronoi diagram
+in 2D Python from scratch — generating seeds with non-uniform density,
+computing cells, and visualizing the result — without referring to the
+original script.
+
+
+=========================================================================
+PHASE 5 — Connecting Back to the Design Tools
+Estimated time: Ongoing
+=========================================================================
+
+At this stage structured learning gives way to going deeper on
+specific topics as they become relevant to actual projects.
+
+RESOURCE 1
+Name:     Discrete Differential Geometry — Keenan Crane (CMU)
+Link:     https://www.cs.cmu.edu/~kmcrane/Projects/DDG/
+          https://www.youtube.com/playlist?list=PL9_jI1bdZmz0hIrNCMQW1YmZysAiIYSSS
+Format:   Free course notes and lectures
+How to use: This course explains how the continuous differential
+            geometry from Phase 3 gets approximated and computed
+            on meshes — exactly what Grasshopper and Blender's
+            Geometry Nodes are doing under the hood. Read the
+            chapters on discrete curvature and the Laplacian first.
+            Directly relevant to mesh-based lattice generation.
+
+RESOURCE 2
+Name:     Physically Based Rendering (pbr-book) — Pharr, Jakob, Humphreys
+Link:     https://pbr-book.org  (free online, full text)
+Format:   Free online book
+How to use: Read the Monte Carlo integration and sampling chapters.
+            These explain the inverse CDF sampling technique in the
+            script with full mathematical rigor. Reading this after
+            Phase 4 connects probability theory to the geometric
+            intuition you've built. The rest of the book is about
+            rendering and optional.
+
+RESOURCE 3
+Name:     scipy.spatial documentation — Voronoi and Delaunay
+Link:     https://docs.scipy.org/doc/scipy/reference/spatial.html
+Format:   Free reference documentation
+How to use: Once you understand the theory, read through scipy's
+            spatial module to see how production implementations
+            handle edge cases, infinite regions, and numerical
+            stability. Then refactor your own brute-force Voronoi
+            to use scipy.spatial.Voronoi and compare the outputs.
+            This is the upgrade path for the Fusion script too.
+
+
+=========================================================================
+SUPPLEMENTARY TOOLS — USE THROUGHOUT ALL PHASES
+=========================================================================
+
+Desmos (graphing)
+  https://www.desmos.com/calculator
+  Live parametric curve exploration. Use constantly.
+
+GeoGebra (geometry + calculus)
+  https://www.geogebra.org
+  More powerful than Desmos for 3D and differential geometry.
+  Particularly useful in Phase 3 for visualizing surface normals
+  and curvature on 3D surfaces interactively.
+
+Wolfram Alpha (computation)
+  https://www.wolframalpha.com
+  Use to check derivatives and integrals when you're unsure.
+  Type equations in plain English or standard notation.
+
+Python + matplotlib (implementation)
+  https://matplotlib.org/stable/tutorials/index.html
+  Every concept encountered should be implemented and plotted.
+  This is non-negotiable — mathematical understanding that lives
+  only on paper does not transfer into design tools.
+
+
+=========================================================================
+REALISTIC TIME & APPROACH NOTES
+=========================================================================
+
+Total estimated time: 12–18 months at 5–7 hours per week
+
+Phase 1:  6–8 weeks   (rebuilding intuition)
+Phase 2:  4–6 weeks   (parametric curves, first practical returns)
+Phase 3:  6–8 weeks   (3D surfaces, script logic fully understood)
+Phase 4:  4–6 weeks   (Voronoi from scratch)
+Phase 5:  Ongoing     (project-driven deepening)
+
+The single most important habit across all phases:
+Implement everything in code and plot the output.
+Every concept should become a function, be visualized, and be varied.
+That feedback loop is what builds the intuition that transfers into
+design decisions inside Fusion, Grasshopper, and Blender.
+
+=========================================================================
+END OF DOCUMENT
+=========================================================================
